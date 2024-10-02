@@ -1,9 +1,20 @@
+#import "@preview/touying:0.5.2": *
+#import "@preview/showybox:2.0.1": showybox // Colorful and customizable boxes
+#import "@preview/physica:0.9.3": * // Math constructs for science and engineering
+#import "@preview/cetz:0.2.2" // Draw figures
+#import "@preview/cetz-venn:0.1.1" // Draw venn diagram
+
 #let nowdate_jp = {
   [#datetime.today().year()年#datetime.today().month()月#datetime.today().day()日]
 }
 #let nowdate_slash = {
   [#datetime.today().year()/#datetime.today().month()/#datetime.today().day()]
 }
+
+//言語の設定
+#let gothic = ("MS PGothic", "Hiragino Kaku Gothic Pro", "IPAexGothic", "Noto Sans CJK JP")
+#let mincho = ("MS PMincho", "Hiragino Mincho Pro", "IPAexMincho", "Noto Serif CJK JP")
+#let english = ("Times New Roman", "New Computer Modern")
 
 
 // ソースコードを表示するための関数 -----
@@ -45,3 +56,31 @@
     left: 4pt
   )
 )
+
+// ========================================
+
+#let set-init(
+  theme: "metropolis",
+  body
+) = {
+  set text(font: gothic)
+  set text(lang: "ja")
+  show raw.where(block: true): it =>{
+    grid(
+      columns: 2,
+      gutter: 0pt,
+      num_content_block(it.text),
+      code_content_block(it),
+  )}
+  show raw.where(block: false): box.with(
+    fill: luma(240),
+    inset: (x: 3pt, y: 0pt),
+    outset: (y: 3pt),
+    radius: 2pt,
+  )
+  if theme == "metropolis"{
+  }else if theme == "university"{
+
+  }
+  body
+}
