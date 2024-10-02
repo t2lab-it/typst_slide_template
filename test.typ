@@ -37,6 +37,13 @@
 #import themes.university: *
 #show: university-theme.with(
   aspect-ratio: "16-9",
+  config-colors(
+    //primary: rgb("#04364A"),
+    //secondary: rgb("#176B87"),
+    //tertiary: rgb("#448C95"),
+    //neutral-lightest: rgb("#ffffff"),
+    //neutral-darkest: rgb("#000000"),
+  ),
   header-right: "",
   footer-columns: (45%, 1fr, 10%),
   footer-a: self => {
