@@ -27,11 +27,11 @@
 
 // ==================================================
 
-== #text(fill: black)[参考文献]
+/* == #text(fill: black)[参考文献]
 #slide[
   #bibliography-list(
-    ..bib-file(read("example/refs.bib")), lang: none)
-]
+..bib-file(read("example/refs.bib")), lang: none)
+] */
 
 // ==================================================
 #show: appendix

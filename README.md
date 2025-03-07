@@ -4,51 +4,33 @@ typstの日本語テンプレート
 
 ## テンプレートの使い方
 
-以下に `araki` というGitHubユーザーが `araki2024_note` という名前でこのリポジトリを複製する手順を示します．
-
-※本GitHub Organizationで共有する際は `t2lab-it` で作業してください．
-
-1. GitHubで `araki2024_note` という新しいリポジトリを作成する．
-   このとき， `README` や `.gitignore` などを追加せず空のリポジトリを作成する．
-2. 本テンプレートをその名前でcloneする
-
+1. 個人アカウント（`user`）でTypst文書を管理する新たなレポジトリ（ここでは`repository`という名前を例にする）を作成する
+2. そのレポジトリを自分のPCにクローンする
    ```bash
-   gh repo clone t2lab-it/typst_slide_template araki2024_note
+   gh repo clone user/repository
    ```
-
-3. 先ほど作成したリモートリポジトリを登録し， `push` する．
-
-   ※空でないリポジトリを作成しているとここでエラーが出る．
-
+4. このレポジトリをサブモジュールとして登録する
    ```bash
-   git remote set-url origin git@github.com:araki/araki2024_note
-   git push origin HEAD
+   cd repository
+   git submodule add git@github.com:t2lab-it/typst_slide_template.git
+   ```
+5. `main.typ`をコピーする
+   ```bash
+   cd ..
+   cp typst_slide_template/main.typ main.typ
+   ```
+6. `main.typ`内の1行目を次のように書き換える
+   ```typst
+   #import "typst_slide_template/lib.typ": *
    ```
 
 ### テンプレートへの更新を取り入れるとき
 
-1. このテンプレートのリポジトリを登録する
+1. サブモジュール内をpullする
 
    ```bash
-   git remote add upstream git@github.com:t2lab-it/typst_slide_template
-   ```
-
-2. テンプレートの最新状態を取得する
-
-   ```bash
-   git fetch upstream
-   ```
-
-3. 自分が `master` / `main` ブランチにいることを確認し，テンプレートの最新状態を `merge` する
-
-   ```bash
-   git switch master && git merge upstream/master
-   ```
-
-4. 自身のリモートリポジトリを更新する
-
-   ```bash
-   git push origin HEAD
+   cd typst_slide_template
+   git pull origin HEAD
    ```
 
 ## 拡張機能について
