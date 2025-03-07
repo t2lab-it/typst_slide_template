@@ -12,27 +12,21 @@
   handout: false,
   body) = {
   show: university-theme.with(
-    aspect-ratio: "16-9",
-    config-colors(
-      primary: rgb("#04364A"),
-      secondary: rgb("#176B87"),
-      tertiary: rgb("#448C95"),
-      neutral-lightest: rgb("#ffffff"),
-      neutral-darkest: rgb("#000000"),
-    ),
-    header-right: "",
-    footer-columns: (45%, 1fr, 10%),
+    header-right: "", // Remove section
+    footer-columns: (45%, 45%, 10%), // Decompose footer into three columns
+    // left footer: current section
     footer-a: self => {
-      sym.section
-      utils.display-current-heading(level: 1)
+      sym.section + " " + utils.display-current-heading(level: 1)
     },
+    // centre footer: summary & presentation date
     footer-b: self => {
       h(1fr)
       self.info.summary
       h(1fr)
-      self.info.date
+      context self.info.date
       h(1fr)
     },
+    // right footer: slide number
     footer-c: context utils.slide-counter.display() + " / " + utils.last-slide-number,
     config-info(
       title: title,
@@ -43,8 +37,13 @@
       logo: logo,  // emoji.school,
       summary: summary
     ),
+    // Date format
+    config-common(datetime-format: "[month repr:short]. [day], [year]"),
+    // config-common(datetime-format: "[year]年[month]月[day]日"), // 日本語
     // Do not show 'new section' slide
     config-common(new-section-slide-fn: none),
+    // Semi-transparent animation ***does not work for some cases***
+    // config-methods(cover: utils.semi-transparent-cover.with(alpha: 80%)),
     // Handout slide
     config-common(handout: handout)
   )

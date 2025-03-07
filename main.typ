@@ -1,5 +1,6 @@
 #import "lib.typ": *
 #show: set-init.with(font: gothic)
+#show: bib_init
 
 // --------------------------------------------------
 // テーマの設定
@@ -25,11 +26,11 @@
 ]
 
 // ==================================================
+
+== #text(fill: black)[参考文献]
 #slide[
-  #bibliography(
-    style: "annual-reviews-author-date",
-    "refs.bib",
-  )
+  #bibliography-list(
+    ..bib-file(read("example/refs.bib")), lang: none)
 ]
 
 // ==================================================

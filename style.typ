@@ -6,6 +6,11 @@
 #import "@preview/pinit:0.2.2": * // Draw pinit diagram
 
 // ========================================
+// 参考文献の設定
+#import "bib_style/lib.typ": *
+#import bib_setting_jsme: *
+
+// ========================================
 
 //日付の設定
 #let nowdate_jp = {
@@ -56,6 +61,14 @@
     h(0.25em)
     box(fill: luma(220), inset: (x: 0.5em, y: 0pt), outset: (bottom: 0.25em, top: 0.25em), radius: 2pt, align(bottom, it))
     h(0.25em)
+  }
+  // 和欧文間空白
+  // https://qiita.com/zr_tex8r/items/a9d82669881d8442b574
+  show math.equation.where(block: false): it => {
+    let ghost = text(font: "Adobe Blank", "\u{375}") // 欧文ゴースト
+    ghost
+    it
+    ghost
   }
 
   body

@@ -1,84 +1,26 @@
-#import "style.typ": *
-#show: set-init.with()
+#import "../lib.typ": *
+#show: set-init
+#show: bib_init
+
 
 // --------------------------------------------------
-// metropolis theme
+// テーマの設定
 // --------------------------------------------------
-///*
-#import themes.metropolis: *
-  #show: metropolis-theme.with(
-    aspect-ratio: "16-9",
-      config-colors(
-      //primary: rgb("#eb811b"),
-      //primary-light: rgb("#d6c6b7"),
-      //secondary: rgb("#d1edf9"),
-      //neutral-lightest: rgb("#fafafa"),
-      //neutral-dark: rgb("#23373b"),
-      //neutral-darkest: rgb("#23373b")
-    ),
-    config-info(
-      title: [タイトル],
-      subtitle: [サブタイトル],
-      author: [名前],
-      date: nowdate_slash,// nowdate_slash: 2024/10/2  nowdate_jp: 2024年10月2日
-      institution: [所属],
-    ),
-    // Do not show 'new section' slide
-    config-common(new-section-slide-fn: none),
-    // Handout slide
-    // config-common(handout: true),
-    footer: self => utils.display-current-heading(level: 1),
-  )
-//*/
-// --------------------------------------------------
-// university theme
-// --------------------------------------------------
-/*
-#import themes.university: *
-#show: university-theme.with(
-  aspect-ratio: "16-9",
-  config-colors(
-    //primary: rgb("#04364A"),
-    //secondary: rgb("#176B87"),
-    //tertiary: rgb("#448C95"),
-    //neutral-lightest: rgb("#ffffff"),
-    //neutral-darkest: rgb("#000000"),
-  ),
-  header-right: "",
-  footer-columns: (45%, 1fr, 10%),
-  footer-a: self => {
-    sym.section
-    utils.display-current-heading(level: 1)
-  },
-  footer-b: self => {
-    h(1fr)
-    self.info.summary
-    h(1fr)
-    self.info.date
-    h(1fr)
-  },
-  footer-c: utils.slide-counter.display() + " / " + utils.last-slide-number,
-  config-info(
-    title: [タイトル],
-    subtitle: [サブタイトル],
-    author: [名前],
-    date: nowdate_jp,  // nowdate_slash: 2024/10/2  nowdate_jp: 2024年10月2日
-    institution: [],  // [TUS, UC3M, MIT],
-    logo: "",  // emoji.school,
-    summary: [所属]
-  ),
-  // Do not show 'new section' slide
-  config-common(new-section-slide-fn: none),
-  // Handout slide
-  // config-common(handout: true)
+
+#import metropolis: *
+#show: theme-setting.with(
+  title: [タイトル],
+  subtitle: [サブタイトル],
+  author: [名前],
+  date: nowdate_slash,// nowdate_slash: 2024/10/2  nowdate_jp: 2024年10月2日
+  institution: [所属],
+  handout: false,// false: 通常スライド true: 資料スライド
 )
-*/
-
 // ==================================================
 
 #title-slide()
 
-== 最初のスライド
+== #text(fill: black)[最初のスライド]
 #slide[
   スライドタイトルは，
   ```typst
@@ -94,7 +36,7 @@
   のように記述します．
 ]
 
-== 数式
+== #text(fill: black)[数式]
 #slide[
   数式も，普通の文章と同様に
   ```typst
@@ -111,7 +53,7 @@
   のようになります．
 ]
 
-== CeTZによる図の挿入
+== #text(fill: black)[CeTZによる図の挿入]
 #slide[
   図を挿入するには，CeTZを利用します．例えば，
   ```typst
@@ -169,7 +111,7 @@
   #align(center)[
     #cetz.canvas({
         import cetz.draw: *
-        //content((0,0), image("figure/water.jpg", width: 10cm))
+        content((0,0), image("figure/water.jpg", width: 10cm))
         line((-1,0),(11,0), mark: (end: "stealth"), fill: black)
         line((0,-1),(0,5), mark: (end: "stealth"), fill: black)
         bezier((0,0), (5,3), (3,0), (4,3))
@@ -180,7 +122,7 @@
   ]
 ]
 
-== 表示の分割
+== #text(fill: black)[表示の分割]
 #slide[
   単純に2分割以上をするには，`columns`関数を利用します．
   ```typst
@@ -217,7 +159,7 @@
 
 #show: appendix
 
-== Appendixと参考文献の書き方
+== #text(fill: black)[Appendixと参考文献の書き方]
 #slide[
   ```typst
   #show: appendix
@@ -226,9 +168,8 @@
   参考文献は，`@tsukahara2023` とすれば，@tsukahara2023 のように表示され，参考文献が表示されます．
 ]
 
+== #text(fill: black)[参考文献]
 #slide[
-  #bibliography(
-    style: "annual-reviews-author-date",
-    "refs.bib",
-  )
+  #bibliography-list(
+    ..bib-file(read("refs.bib")), lang: none)
 ]
