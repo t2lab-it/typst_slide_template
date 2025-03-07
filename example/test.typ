@@ -169,7 +169,7 @@
   #align(center)[
     #cetz.canvas({
         import cetz.draw: *
-        content((0,0), image("figure/water.jpg", width: 10cm))
+        //content((0,0), image("figure/water.jpg", width: 10cm))
         line((-1,0),(11,0), mark: (end: "stealth"), fill: black)
         line((0,-1),(0,5), mark: (end: "stealth"), fill: black)
         bezier((0,0), (5,3), (3,0), (4,3))
