@@ -16,7 +16,6 @@ typstの日本語テンプレート
    ```
 5. `main.typ`をコピーする
    ```bash
-   cd ..
    cp typst_slide_template/main.typ main.typ
    ```
 6. `main.typ`内の1行目を次のように書き換える
@@ -24,7 +23,16 @@ typstの日本語テンプレート
    #import "typst_slide_template/lib.typ": *
    ```
 
-### テンプレートへの更新を取り入れるとき
+## 文献の追加方法
+
+1. `ref.bib`を追加する
+   ```bash
+   touch ref.bib
+   ```
+2. `ref.bib`の中にbibtexを入れる
+3. `main.typ`の参考文献の`/* */`を外す
+
+## テンプレートへの更新を取り入れるとき
 
 1. サブモジュール内をpullする
 

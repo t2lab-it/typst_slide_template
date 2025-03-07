@@ -30,7 +30,7 @@
 /* == #text(fill: black)[参考文献]
 #slide[
   #bibliography-list(
-..bib-file(read("example/refs.bib")), lang: none)
+..bib-file(read("ref.bib")), lang: none)
 ] */
 
 // ==================================================
