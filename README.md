@@ -22,7 +22,7 @@ typstの日本語テンプレート
 
    ```bash
    cp typst_slide_template/main.typ main.typ
-   cp typst_slide_template/ref.bib
+   cp typst_slide_template/ref.bib ref.bib
    ```
 
 ## 使用できるテーマについて
@@ -33,6 +33,23 @@ typstの日本語テンプレート
 - `university`
 
 `main.typ`ファイル内の`#import metropolis: *`を書き換えることでテーマをすぐに変更できます．
+
+## サブモジュールの入ったレポジトリをクローンするとき
+
+`repository`というレポジトリで本レポジトリをサブモジュールとして登録している場合，`repository`をcloneするには以下の操作が必要です．
+
+1. 通常通りcloneする
+
+   ```bash
+   gh repo clone user/repository
+   ```
+
+2. サブモジュールの中身を取得する
+
+   ```bash
+   cd repository
+   git submodule update --init --recursive
+   ```
 
 ## テンプレートへの更新を取り入れるとき
 
