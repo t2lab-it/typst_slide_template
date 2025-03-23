@@ -31,7 +31,8 @@
 #slide[
   #bibliography-list(
     title: none,
-..bib-file(read("ref.bib")), lang: none)
+  ..bib-file(read("ref.bib"))
+  )
 ]
 
 // ==================================================
