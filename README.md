@@ -6,31 +6,33 @@ typstの日本語テンプレート
 
 1. 個人アカウント（`user`）でTypst文書を管理する新たなレポジトリ（ここでは`repository`という名前を例にする）を作成する
 2. そのレポジトリを自分のPCにクローンする
+
    ```bash
    gh repo clone user/repository
    ```
-4. このレポジトリをサブモジュールとして登録する
+
+3. このレポジトリをサブモジュールとして登録する
+
    ```bash
    cd repository
    git submodule add git@github.com:t2lab-it/typst_slide_template.git
    ```
-5. `main.typ`をコピーする
+
+4. `main.typ`をコピーする
+
    ```bash
    cp typst_slide_template/main.typ main.typ
-   ```
-6. `main.typ`内の1行目を次のように書き換える
-   ```typst
-   #import "typst_slide_template/lib.typ": *
+   cp typst_slide_template/ref.bib
    ```
 
-## 文献の追加方法
+## 使用できるテーマについて
 
-1. `ref.bib`を追加する
-   ```bash
-   touch ref.bib
-   ```
-2. `ref.bib`の中にbibtexを入れる
-3. `main.typ`の参考文献の`/* */`を外す
+現在，すぐに使用可能なテーマは以下のものです．
+
+- `metropolis`
+- `university`
+
+`main.typ`ファイル内の`#import metropolis: *`を書き換えることでテーマをすぐに変更できます．
 
 ## テンプレートへの更新を取り入れるとき
 

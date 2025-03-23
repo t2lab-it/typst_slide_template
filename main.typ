@@ -1,6 +1,6 @@
-#import "lib.typ": *
+#import "typst_slide_template/lib.typ": *
 #show: set-init.with(font: gothic)
-#show: bib_init
+#show: bib-init
 
 // --------------------------------------------------
 // テーマの設定
@@ -27,11 +27,12 @@
 
 // ==================================================
 
-/* == #text(fill: black)[参考文献]
+ == #text(fill: black)[参考文献]
 #slide[
   #bibliography-list(
+    title: none,
 ..bib-file(read("ref.bib")), lang: none)
-] */
+]
 
 // ==================================================
 #show: appendix

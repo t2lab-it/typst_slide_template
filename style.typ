@@ -7,8 +7,8 @@
 
 // ========================================
 // 参考文献の設定
-#import "bib_style/lib.typ": *
-#import bib_setting_jsme: *
+#import "@preview/enja-bib:0.1.0": *
+#import bib-setting-jsme: *
 
 // ========================================
 
