@@ -1,6 +1,6 @@
 #import "../lib.typ": *
 #show: set-init
-#show: bib_init
+#show: bib-init
 
 
 // --------------------------------------------------

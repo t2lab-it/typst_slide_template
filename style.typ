@@ -1,7 +1,7 @@
 #import "@preview/touying:0.6.1": *
 #import "@preview/showybox:2.0.4": showybox // Colorful and customizable boxes
 #import "@preview/physica:0.9.4": * // Math constructs for science and engineering
-#import "@preview/cetz:0.3.3" // Draw figures
+#import "@preview/cetz:0.3.4" // Draw figures
 #import "@preview/cetz-venn:0.1.3" // Draw venn diagram
 #import "@preview/pinit:0.2.2": * // Draw pinit diagram
 

@@ -1,6 +1,6 @@
 #import "../lib.typ": *
 #show: set-init.with(font: ((name: "Noto Sans CJK JP", covers: regex("[\p{scx:Han}\p{scx:Hira}\p{scx:Kana}]")), "Cabin"))
-#show: bib_init
+#show: bib-init
 
 // --------------------------------------------------
 // テーマの設定
