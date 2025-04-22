@@ -42,6 +42,6 @@
 #let description(it) = place(
   top + right,
   dx: 20pt,
-  dy: -46pt,
+  dy: -40pt,
   align(center, it),
 )
