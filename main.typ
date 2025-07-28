@@ -19,7 +19,7 @@
 
 #title-slide()
 
-== #text(fill: black)[スライドタイトル]
+== スライドタイトル
 #slide[
   #description([スライドの補足説明])
   スライドテキスト
@@ -27,7 +27,7 @@
 
 // ==================================================
 
- == #text(fill: black)[参考文献]
+ == 参考文献
 #slide[
   #bibliography-list(
     title: none,
