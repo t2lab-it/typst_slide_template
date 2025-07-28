@@ -53,9 +53,9 @@
 // ========================================
 
 // スライドの右上に補足説明を表示
-#let description(it) = place(
+#let description(it, dx: 0pt, dy: 0pt) = place(
   top + right,
-  dx: 20pt,
-  dy: -35pt,
+  dx: 20pt + dx,
+  dy: -35pt + dy,
   align(center, it),
 )
