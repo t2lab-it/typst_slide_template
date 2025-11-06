@@ -32,7 +32,7 @@
     // Handout slide
     config-common(handout: handout),
     footer: self => utils.display-current-heading(level: 1),
-    header: self => utils.display-current-heading(style: auto),
+    header: self => utils.display-current-heading(style: auto, level: 2),
   )
   show heading.where(level: 2): set text(fill: black)
   body
