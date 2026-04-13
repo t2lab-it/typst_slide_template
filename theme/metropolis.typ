@@ -8,11 +8,11 @@
   date: nowdate_slash,
   institution: [所属],
   handout: false,
-  body
-  ) = {
+  body,
+) = {
   show: metropolis-theme.with(
     aspect-ratio: "16-9",
-      config-colors(
+    config-colors(
       primary: rgb("#eb811b"),
       primary-light: rgb("#d6c6b7"),
       secondary: rgb("#d1edf9"),
@@ -24,7 +24,7 @@
       title: title,
       subtitle: subtitle,
       author: author,
-      date: date,// nowdate_slash: 2024/10/2  nowdate_jp: 2024年10月2日
+      date: date, // nowdate_slash: 2024/10/2  nowdate_jp: 2024年10月2日
       institution: institution,
     ),
     // Do not show 'new section' slide
@@ -32,9 +32,8 @@
     // Handout slide
     config-common(handout: handout),
     footer: self => utils.display-current-heading(level: 1),
-    header: self => utils.display-current-heading(style: auto, level: 2),
+    header: self => utils.display-current-heading(style: current-heading => text(current-heading.body, fill: black), level: 2),
   )
-  show heading.where(level: 2): set text(fill: black)
   body
 }
 

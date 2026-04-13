@@ -1,4 +1,5 @@
-#import "typst_slide_template/lib.typ": *
+//#import "typst_slide_template/lib.typ": *
+#import "lib.typ": *
 #show: set-init.with(font: gothic)
 #show: bib-init
 
