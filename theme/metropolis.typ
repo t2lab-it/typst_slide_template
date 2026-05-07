@@ -47,6 +47,6 @@
   align(center, it),
 )
 
-#let citet(..citation) = text(bib-style.bib-cite-func.with(bib-cite: bib-citet)(..citation), size: 15pt)
+#let citet(..citation, size: 15pt) = text(bib-style.bib-cite-func.with(bib-cite: bib-citet)(..citation), size: size)
 
-#let citep(..citation) = text(bib-style.bib-cite-func.with(bib-cite: bib-citep)(..citation), size: 15pt)
+#let citep(..citation, size: 15pt) = text(bib-style.bib-cite-func.with(bib-cite: bib-citep)(..citation), size: size)

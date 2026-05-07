@@ -1,9 +1,10 @@
-#import "@preview/touying:0.7.1": *
+#import "@preview/touying:0.7.3": *
 #import "@preview/showybox:2.0.4": showybox // Colorful and customizable boxes
 #import "@preview/physica:0.9.8": * // Math constructs for science and engineering
 #import "@preview/cetz:0.4.2" // Draw figures
 #import "@preview/cetz-venn:0.1.4" // Draw venn diagram
 #import "@preview/pinit:0.2.2": * // Draw pinit diagram
+#import "@preview/cjk-spacer:0.2.0": *
 
 // ========================================
 // 参考文献の設定
@@ -62,14 +63,8 @@
     box(fill: luma(220), inset: (x: 0.5em, y: 0pt), outset: (bottom: 0.25em, top: 0.25em), radius: 2pt, align(bottom, it))
     h(0.25em)
   }
-  // 和欧文間空白
-  // https://qiita.com/zr_tex8r/items/a9d82669881d8442b574
-  show math.equation.where(block: false): it => {
-    let ghost = text(font: "Adobe Blank", "\u{375}") // 欧文ゴースト
-    ghost
-    it
-    ghost
-  }
+  // 和欧文間空白の設定
+  show: cjk-spacer
 
   body
 }
