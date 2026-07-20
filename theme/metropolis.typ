@@ -8,6 +8,7 @@
   date: nowdate_slash,
   institution: [所属],
   handout: false,
+  ..args,
   body,
 ) = {
   show: metropolis-theme.with(
@@ -33,6 +34,7 @@
     config-common(handout: handout),
     footer: self => utils.display-current-heading(level: 1),
     header: self => utils.display-current-heading(style: current-heading => text(current-heading.body, fill: black), level: 2),
+    ..args,
   )
   body
 }

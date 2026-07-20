@@ -10,6 +10,7 @@
   logo: "",
   summary: [所属],
   handout: false,
+  ..args,
   body) = {
   show: university-theme.with(
     header-right: "", // Remove section
@@ -45,7 +46,8 @@
     // Semi-transparent animation ***does not work for some cases***
     // config-methods(cover: utils.semi-transparent-cover.with(alpha: 80%)),
     // Handout slide
-    config-common(handout: handout)
+    config-common(handout: handout),
+    ..args,
   )
   body
 }
