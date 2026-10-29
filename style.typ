@@ -1,14 +1,14 @@
-#import "@preview/touying:0.7.4": *
+#import "@preview/touying:0.8.0": *
 #import "@preview/showybox:2.0.4": showybox // Colorful and customizable boxes
 #import "@preview/physica:0.9.8": * // Math constructs for science and engineering
-#import "@preview/cetz:0.5.2" // Draw figures
+#import "@preview/cetz:0.5.3" // Draw figures
 #import "@preview/cetz-venn:0.2.0" // Draw venn diagram
 #import "@preview/pinit:0.2.2": * // Draw pinit diagram
 #import "@preview/cjk-spacer:0.2.1": *
 
 // ========================================
 // 参考文献の設定
-#import "@preview/enja-bib:0.1.0": *
+#import "@preview/enja-bib:0.2.0": *
 #import bib-setting-jsme: *
 
 // ========================================
